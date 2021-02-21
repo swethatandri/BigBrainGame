@@ -305,6 +305,8 @@ public class PlayerController : MonoBehaviour
         instructionsText.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
+        pauseButton.GetComponentInChildren<Text>().text = "pause";
+        unpauseButton.GetComponentInChildren<Text>().text = "play";
         unpauseButton.gameObject.SetActive(true);
         score = 0;
         scoretext.text = "Brainpower: " + score;
@@ -320,6 +322,8 @@ public class PlayerController : MonoBehaviour
         playButton.gameObject.SetActive(false);
         timedButton.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
+        pauseButton.GetComponentInChildren<Text>().text = "pause";
+        unpauseButton.GetComponentInChildren<Text>().text = "play";
         timetext.gameObject.SetActive(true);
         scoretext.gameObject.SetActive(true);
         instructionsText.gameObject.SetActive(false);
