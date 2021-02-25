@@ -9,15 +9,14 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Big Brain Web Build 3.json", {onProgress: UnityProgress});
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Big Brain Web Build w More Updates.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
-    
     <div class="webgl-content">
-      <h1> The Big Brain Game </h1>
-      <div id="gameContainer" style="width: 1120px; height: 600px"></div>
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
+        <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
         <div class="title">Swetha T.- Personal Project</div>
       </div>
