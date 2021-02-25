@@ -16,7 +16,7 @@ public class EnemyScript : MonoBehaviour
     public float normSpeed = 3f;
 
     public float tempSpeed = 0;
-    private float enemyBound = -5;
+    private float enemyBound = -9;
     public GameObject player;
     public PlayerController pc;
     

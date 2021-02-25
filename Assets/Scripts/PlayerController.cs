@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public TextMeshProUGUI plusScore;
 
+    public TextMeshProUGUI credits;
+
 
 
     public bool hasPowerUp = false;
@@ -71,11 +73,14 @@ public class PlayerController : MonoBehaviour
 
 
 
+
+
     public int score;
     // Start is called before the first frame update
     void Start()   {
 
         cameraAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        
 
     }
 
@@ -305,9 +310,8 @@ public class PlayerController : MonoBehaviour
         instructionsText.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
-        pauseButton.GetComponentInChildren<Text>().text = "pause";
-        unpauseButton.GetComponentInChildren<Text>().text = "play";
         unpauseButton.gameObject.SetActive(true);
+        credits.gameObject.SetActive(false);
         score = 0;
         scoretext.text = "Brainpower: " + score;
 
@@ -322,13 +326,12 @@ public class PlayerController : MonoBehaviour
         playButton.gameObject.SetActive(false);
         timedButton.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
-        pauseButton.GetComponentInChildren<Text>().text = "pause";
-        unpauseButton.GetComponentInChildren<Text>().text = "play";
         timetext.gameObject.SetActive(true);
         scoretext.gameObject.SetActive(true);
         instructionsText.gameObject.SetActive(false);
         pauseButton.gameObject.SetActive(true);
         unpauseButton.gameObject.SetActive(true);
+        credits.gameObject.SetActive(false);
 
 
         directionSpeed = 7f;
@@ -356,19 +359,20 @@ public class PlayerController : MonoBehaviour
         timedButton.gameObject.SetActive(false);
         instructionsButton.gameObject.SetActive(false);
         gameObject.SetActive(false);
+        credits.gameObject.SetActive(false);
     
         
     }
 
     public void HomeButton(){
 
-        titletext.gameObject.SetActive(true);
-        playButton.gameObject.SetActive(true);
-        timedButton.gameObject.SetActive(true);
-        instructionsButton.gameObject.SetActive(true);
-        gameObject.SetActive(true);
-        instructionsText.gameObject.SetActive(false);
-        homeButton.gameObject.SetActive(false);
+        
+
+        RestartGame();
+
+        
+        
+        
 
 
     }
@@ -376,12 +380,14 @@ public class PlayerController : MonoBehaviour
     public void PauseButton(){
 
         pause = true;
+        homeButton.gameObject.SetActive(true);
         
     }
     
 
     public void UnpauseButton(){
         pause = false;
+        homeButton.gameObject.SetActive(false);
         
     }
 
